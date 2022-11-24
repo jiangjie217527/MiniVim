@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/try.dir/clear.cpp.o -o ../bin/try  -lcurses 

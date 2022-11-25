@@ -129,29 +129,53 @@ MiniVim/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/build
 .PHONY : MiniVim/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+src/fun.o: src/fun.cpp.o
+.PHONY : src/fun.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/fun.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/fun.cpp.o
+.PHONY : src/fun.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/fun.i: src/fun.cpp.i
+.PHONY : src/fun.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/fun.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/fun.cpp.i
+.PHONY : src/fun.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/fun.s: src/fun.cpp.s
+.PHONY : src/fun.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/fun.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/fun.cpp.s
+.PHONY : src/fun.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -162,9 +186,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MiniVim"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/fun.o"
+	@echo "... src/fun.i"
+	@echo "... src/fun.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

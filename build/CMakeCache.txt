@@ -246,6 +246,15 @@ ReviveTool_IS_TOP_LEVEL:STATIC=ON
 ReviveTool_SOURCE_DIR:STATIC=/home/jiangjie/MiniVim
 
 //Value Computed by CMake
+move_BINARY_DIR:STATIC=/home/jiangjie/MiniVim/build
+
+//Value Computed by CMake
+move_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+move_SOURCE_DIR:STATIC=/home/jiangjie/MiniVim
+
+//Value Computed by CMake
 try_BINARY_DIR:STATIC=/home/jiangjie/MiniVim/build
 
 //Value Computed by CMake

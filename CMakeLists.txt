@@ -11,6 +11,12 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR})
 
-add_executable(MiniVim main.cpp)
+#set sources
+set(MY_SOURCES
+        ${PROJECT_SOURCE_DIR}/src/main.cpp
+        ${PROJECT_SOURCE_DIR}/src/fun.cpp
+        include/fun.h)
+
+add_executable(MiniVim ${MY_SOURCES})
 
 target_link_libraries(MiniVim ${CURSES_LIBRARY})

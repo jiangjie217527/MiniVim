@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/jiangjie/MiniVim/src/fun.cpp" "CMakeFiles/MiniVim.dir/src/fun.cpp.o" "gcc" "CMakeFiles/MiniVim.dir/src/fun.cpp.o.d"
-  "/home/jiangjie/MiniVim/src/main.cpp" "CMakeFiles/MiniVim.dir/src/main.cpp.o" "gcc" "CMakeFiles/MiniVim.dir/src/main.cpp.o.d"
+  "/home/jiangjie/MiniVim/clear.cpp" "CMakeFiles/move.dir/clear.cpp.o" "gcc" "CMakeFiles/move.dir/clear.cpp.o.d"
   )
 
 # Targets to which this target links.

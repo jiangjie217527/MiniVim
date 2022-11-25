@@ -69,32 +69,48 @@ include CMakeFiles/MiniVim.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/MiniVim.dir/flags.make
 
-CMakeFiles/MiniVim.dir/main.cpp.o: CMakeFiles/MiniVim.dir/flags.make
-CMakeFiles/MiniVim.dir/main.cpp.o: ../main.cpp
-CMakeFiles/MiniVim.dir/main.cpp.o: CMakeFiles/MiniVim.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiangjie/MiniVim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MiniVim.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiniVim.dir/main.cpp.o -MF CMakeFiles/MiniVim.dir/main.cpp.o.d -o CMakeFiles/MiniVim.dir/main.cpp.o -c /home/jiangjie/MiniVim/main.cpp
+CMakeFiles/MiniVim.dir/src/main.cpp.o: CMakeFiles/MiniVim.dir/flags.make
+CMakeFiles/MiniVim.dir/src/main.cpp.o: ../src/main.cpp
+CMakeFiles/MiniVim.dir/src/main.cpp.o: CMakeFiles/MiniVim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiangjie/MiniVim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MiniVim.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiniVim.dir/src/main.cpp.o -MF CMakeFiles/MiniVim.dir/src/main.cpp.o.d -o CMakeFiles/MiniVim.dir/src/main.cpp.o -c /home/jiangjie/MiniVim/src/main.cpp
 
-CMakeFiles/MiniVim.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MiniVim.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jiangjie/MiniVim/main.cpp > CMakeFiles/MiniVim.dir/main.cpp.i
+CMakeFiles/MiniVim.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MiniVim.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jiangjie/MiniVim/src/main.cpp > CMakeFiles/MiniVim.dir/src/main.cpp.i
 
-CMakeFiles/MiniVim.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiniVim.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jiangjie/MiniVim/main.cpp -o CMakeFiles/MiniVim.dir/main.cpp.s
+CMakeFiles/MiniVim.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiniVim.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jiangjie/MiniVim/src/main.cpp -o CMakeFiles/MiniVim.dir/src/main.cpp.s
+
+CMakeFiles/MiniVim.dir/src/fun.cpp.o: CMakeFiles/MiniVim.dir/flags.make
+CMakeFiles/MiniVim.dir/src/fun.cpp.o: ../src/fun.cpp
+CMakeFiles/MiniVim.dir/src/fun.cpp.o: CMakeFiles/MiniVim.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiangjie/MiniVim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MiniVim.dir/src/fun.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiniVim.dir/src/fun.cpp.o -MF CMakeFiles/MiniVim.dir/src/fun.cpp.o.d -o CMakeFiles/MiniVim.dir/src/fun.cpp.o -c /home/jiangjie/MiniVim/src/fun.cpp
+
+CMakeFiles/MiniVim.dir/src/fun.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MiniVim.dir/src/fun.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jiangjie/MiniVim/src/fun.cpp > CMakeFiles/MiniVim.dir/src/fun.cpp.i
+
+CMakeFiles/MiniVim.dir/src/fun.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiniVim.dir/src/fun.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jiangjie/MiniVim/src/fun.cpp -o CMakeFiles/MiniVim.dir/src/fun.cpp.s
 
 # Object files for target MiniVim
 MiniVim_OBJECTS = \
-"CMakeFiles/MiniVim.dir/main.cpp.o"
+"CMakeFiles/MiniVim.dir/src/main.cpp.o" \
+"CMakeFiles/MiniVim.dir/src/fun.cpp.o"
 
 # External object files for target MiniVim
 MiniVim_EXTERNAL_OBJECTS =
 
-../bin/MiniVim: CMakeFiles/MiniVim.dir/main.cpp.o
+../bin/MiniVim: CMakeFiles/MiniVim.dir/src/main.cpp.o
+../bin/MiniVim: CMakeFiles/MiniVim.dir/src/fun.cpp.o
 ../bin/MiniVim: CMakeFiles/MiniVim.dir/build.make
 ../bin/MiniVim: /usr/lib/x86_64-linux-gnu/libcurses.so
 ../bin/MiniVim: CMakeFiles/MiniVim.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jiangjie/MiniVim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/MiniVim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jiangjie/MiniVim/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../bin/MiniVim"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MiniVim.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

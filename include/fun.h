@@ -1,11 +1,16 @@
+
 #ifndef MINIVIM_FUN_H
 #define MINIVIM_FUN_H
-
-void refreshLNWin(WINDOW* &LNWin);
-bool ComMod(WINDOW* &ComWin);
-void refreshInfWIn(WINDOW* &FileWin,WINDOW* &InfWin,int y,int x);
+#include <ncurses.h>
+void refreshLNWin(WINDOW *FileWin,WINDOW* &LNWin);
+void refreshInfWin(WINDOW* &FileWin,WINDOW* &InfWin,int y,int x,int mode);
 void init(WINDOW* &FileWin,WINDOW* &InfWin,WINDOW* &ComWin,WINDOW* &LNWin);
-void refreshscreen(WINDOW* &FileWin);
+void location(int &xx,int &yy,int x,int y);
+void move(char *argc);
+void jmp(int l,int &y,int &x);
+void move_cursor(int ch,int &y,int &x);
+void dellin(int y);
+void addlin(int y,int x);
 #endif //MINIVIM_FUN_H
 /*  优秀但不好用的链表
     file=new chain[fileLen+5];

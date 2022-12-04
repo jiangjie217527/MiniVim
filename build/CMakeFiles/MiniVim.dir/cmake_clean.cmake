@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/MiniVim.dir/src/fun.cpp.o.d"
   "CMakeFiles/MiniVim.dir/src/main.cpp.o"
   "CMakeFiles/MiniVim.dir/src/main.cpp.o.d"
+  "CMakeFiles/MiniVim.dir/src/mod.cpp.o"
+  "CMakeFiles/MiniVim.dir/src/mod.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

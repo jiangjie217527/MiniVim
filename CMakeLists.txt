@@ -15,7 +15,7 @@ include_directories(${CURSES_INCLUDE_DIR})
 set(MY_SOURCES
         ${PROJECT_SOURCE_DIR}/src/main.cpp
         ${PROJECT_SOURCE_DIR}/src/fun.cpp
-        include/fun.h)
+        include/fun.h src/mod.cpp include/mod.h)
 
 add_executable(MiniVim ${MY_SOURCES})
 

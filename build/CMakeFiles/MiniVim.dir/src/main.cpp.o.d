@@ -151,6 +151,8 @@ CMakeFiles/MiniVim.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc \
+ /home/jiangjie/MiniVim/include/fun.h \
+ /home/jiangjie/MiniVim/include/mod.h \
  /home/jiangjie/MiniVim/include/fun.h /usr/include/c++/11/vector \
  /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \

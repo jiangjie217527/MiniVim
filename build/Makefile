@@ -177,6 +177,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/mod.o: src/mod.cpp.o
+.PHONY : src/mod.o
+
+# target to build an object file
+src/mod.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/mod.cpp.o
+.PHONY : src/mod.cpp.o
+
+src/mod.i: src/mod.cpp.i
+.PHONY : src/mod.i
+
+# target to preprocess a source file
+src/mod.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/mod.cpp.i
+.PHONY : src/mod.cpp.i
+
+src/mod.s: src/mod.cpp.s
+.PHONY : src/mod.s
+
+# target to generate assembly for a file
+src/mod.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/mod.cpp.s
+.PHONY : src/mod.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +216,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/mod.o"
+	@echo "... src/mod.i"
+	@echo "... src/mod.s"
 .PHONY : help
 
 

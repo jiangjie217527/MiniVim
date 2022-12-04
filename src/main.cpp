@@ -1,72 +1,85 @@
 #include<ncurses.h>
 #include<fstream>
 #include"fun.h"
+#include"mod.h"
 #include <vector>
+#include <cstdio>
 #define N 100001
-//char Log[10]={'l','o','g','.','o'};
+char dft[100]={'a','.','o'};
+char *nm;
 int max_y,Y,X;          //cur,which  start from 0
-std::vector<int>tmp[N];//string
-void dellin(int y){
-    for(int i=y;i<max_y;i++){
-        tmp[i].swap(tmp[i+1]);
-    }
-    max_y--;
-}
-void addlin(int y,int x){
-    max_y++;
-    tmp[max_y].resize(1);
-    for(int i=max_y;i>y+1;i--){
-        tmp[i].swap(tmp[i-1]);
-    }
-    tmp[y+1].clear();
+int nameid,op;
+int sv,cr,de;
+// Y ,X size of screen i.e. 28&118
+//max_y lines of the text - 1 ,start from 0,i.e.
+//show_y1 show_y2  lines I want to show started from 0
+int show_y1,show_y2;
 
-    for(int i=x;i<tmp[y].size();i++){
-        tmp[y+1].push_back(tmp[y][i]);
-    }
-    for(int i=tmp[y].size();i>x;i--){
-        tmp[y].pop_back();
-    }
-}
+std::vector<int>tmp[N];//string
+
 void readIn(WINDOW* FileWin, WINDOW* InfWin, WINDOW* LNWin,char *argc);
-void typeIn(WINDOW* FileWin, WINDOW* InfWin, WINDOW* ComWin,WINDOW* LNWin);
-void move(char *argc);// move the string from tmp to target
 
 int main(int argv, char *argc[]) {
     if(argv==1){ //default filename
-        argc[1]=new char[5];
-        argc[1][0]='a';
-        argc[1][1]='.';
-        argc[1][2]='o';
+        argc[1]=dft;
+        nameid=1;
     }
-
+    else if(argv==2){
+        if(argc[1][0]=='-'){  //Vim -r
+            nameid=2;
+            argc[2]=dft;
+            if(argc[1][1]=='t'||argc[1][1]=='T'){
+                op=1;
+            }
+            else if(argc[1][1]=='r'||argc[1][1]=='R'){
+                op=2;
+            }
+        }
+        else{
+            nameid=1;   //vim a.o
+        }
+    }
+    else {
+        nameid=2;    //vim -r a.o
+    }
+    nm = argc[nameid];
     initscr();//create the initial window
     raw();    //show what you type at once
     noecho(); //close echo
     int y,x;
-    getmaxyx(stdscr,y,x);X=x-2;
+    getmaxyx(stdscr,y,x);
+    X=x-2;  //lines of fileWin
+    Y=y-2;
     WINDOW *FileWin = newwin(y-2,x-2,0,2);
     WINDOW *InfWin = newwin(1,x,y-2,0);
     WINDOW *ComWin = newwin(1,x,y-1,0);
     WINDOW *LNWin  = newwin(y-2,2,0,0);
     refresh();
     init(FileWin,InfWin,ComWin,LNWin); //color
-
-    //tmp stream
-    readIn(FileWin, InfWin, LNWin, argc[1]);
-    typeIn(FileWin, InfWin, ComWin,LNWin);
+    readIn(FileWin, InfWin, LNWin, argc[nameid]);
+    if(op==1)
+        NormalMod(FileWin, InfWin, ComWin,LNWin,0,0);
+    else
+        NormalMod(FileWin, InfWin, ComWin,LNWin,max_y,(int)tmp[max_y].size());
 
     //move mod
-    move(argc[1]);
-
+    if(sv)
+        move(argc[nameid]);
+    if(de)
+        remove(argc[nameid]);
     //destroy all windows
     endwin();
     return 0;
 }
 
 void readIn(WINDOW* FileWin, WINDOW* InfWin,WINDOW* LNWin,char *argc){
-    std::ofstream T;
+    std::ifstream Ti(argc);
+    if(!Ti)cr=1;
+    Ti.close();
+    std::ofstream T; //create file if not exist
     T.open(argc,std::ios::app);
     T.close();
+
     std::ifstream iFile;
     iFile.open(argc,std::ios::binary);
 
@@ -82,109 +95,18 @@ void readIn(WINDOW* FileWin, WINDOW* InfWin,WINDOW* LNWin,char *argc){
         }
     }
     max_y=y;
-    refreshLNWin(LNWin);
-    refreshscreen(FileWin);
-    refreshInfWIn(FileWin,InfWin,y,tmp[y].size());
+    if(op!=1) {
+        show_y2 = max_y;
+        if (max_y >= Y) { show_y1 = max_y - Y + 1; }
+        else { show_y1 = 0; }
+    }
+    else {
+        show_y1=0;
+        show_y2=(max_y>=Y?Y:max_y);
+    }
+    refreshInfWin(FileWin,InfWin,y,(int)tmp[y].size(),1);
+    refreshLNWin(FileWin,LNWin);
 
 
     iFile.close();
-}
-
-void typeIn(WINDOW* FileWin, WINDOW* InfWin,WINDOW* ComWin,WINDOW* LNWin){
-    int ch,y=max_y,x=tmp[y].size();int break_flg=0;
-    while(true){
-        ch= wgetch(FileWin);
-        switch(ch){
-            case KEY_UP:{
-                if(y>0) {
-                    y--;
-                    if(x>tmp[y].size())
-                        x=tmp[y].size();
-                }
-                break;
-            }
-            case KEY_DOWN:{
-                if(y<max_y){
-                    y++;
-                    if(x>tmp[y].size())
-                        x=tmp[y].size();
-                }
-                break;
-            }
-            case KEY_LEFT:{
-                if(x>0)
-                    x--;
-                else {
-                    if(y>0){
-                        y--;
-                        x=tmp[y].size();
-                    }
-                }
-                break;
-            }
-            case KEY_RIGHT:{
-                if(x<tmp[y].size())
-                    x++;
-                else {
-                    if(y<max_y){
-                        y++;
-                        x=0;
-                    }
-                }
-                break;
-            }
-            case ':':{
-                if(ComMod(ComWin)){
-                    break_flg=1;
-                }
-                break;
-            }
-            case KEY_BACKSPACE:{
-                if(x==0){
-                    if(y>0){
-                        dellin(y);
-                        y--;x=tmp[y].size();
-                    }
-                }
-                else{
-                    x--;
-                    tmp[y].erase(tmp[y].begin()+x);
-                }
-                break;
-            }
-            default:{
-                if(ch=='\n'){
-                    addlin(y,x);
-                    y++;x=tmp[y].size();
-                }
-                else {
-                    if(x==tmp[y].size()){  //end
-                        tmp[y].push_back(ch);
-                    }
-                    else { //inner
-                        tmp[y].insert(tmp[y].begin()+x,ch);
-                    }
-                    x++;
-                }
-            }
-        }
-        if(break_flg)break;
-
-        refreshLNWin(LNWin);
-        refreshscreen(FileWin);
-        refreshInfWIn(FileWin,InfWin,y,x);
-    }
-}
-//note:we only need to delete and ignore something and I finally decided to use chain
-//
-void move(char *argc){
-    std::ofstream oFile;
-    oFile.open(argc);
-    for(int i=0;i<=max_y;i++){
-        for(int j=0;j<tmp[i].size();j++)
-            oFile<<(char)tmp[i][j];
-        if(i!=max_y)
-            oFile<<'\n';
-    }
-    oFile.close();
 }

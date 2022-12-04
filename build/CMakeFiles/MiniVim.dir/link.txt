@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/MiniVim.dir/src/main.cpp.o CMakeFiles/MiniVim.dir/src/fun.cpp.o -o ../bin/MiniVim  -lcurses 
+/usr/bin/c++ CMakeFiles/MiniVim.dir/src/main.cpp.o CMakeFiles/MiniVim.dir/src/fun.cpp.o CMakeFiles/MiniVim.dir/src/mod.cpp.o -o ../bin/MiniVim  -lcurses 

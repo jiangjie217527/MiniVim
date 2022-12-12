@@ -34,7 +34,9 @@ CMakeFiles/MiniVim.dir/src/mod.cpp.o: /home/jiangjie/MiniVim/src/mod.cpp \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/unctrl.h /usr/include/curses.h \
- /home/jiangjie/MiniVim/include/fun.h /usr/include/c++/11/vector \
+ /home/jiangjie/MiniVim/include/cursor.h \
+ /home/jiangjie/MiniVim/include/fun.h \
+ /home/jiangjie/MiniVim/include/cursor.h /usr/include/c++/11/vector \
  /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -69,4 +71,5 @@ CMakeFiles/MiniVim.dir/src/mod.cpp.o: /home/jiangjie/MiniVim/src/mod.cpp \
  /usr/include/c++/11/bits/functional_hash.h \
  /usr/include/c++/11/bits/hash_bytes.h \
  /usr/include/c++/11/bits/range_access.h \
- /usr/include/c++/11/bits/vector.tcc
+ /usr/include/c++/11/bits/vector.tcc \
+ /home/jiangjie/MiniVim/include/prefix.h

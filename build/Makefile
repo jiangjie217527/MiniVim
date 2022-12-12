@@ -129,6 +129,30 @@ MiniVim/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/build
 .PHONY : MiniVim/fast
 
+src/cursor.o: src/cursor.cpp.o
+.PHONY : src/cursor.o
+
+# target to build an object file
+src/cursor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/cursor.cpp.o
+.PHONY : src/cursor.cpp.o
+
+src/cursor.i: src/cursor.cpp.i
+.PHONY : src/cursor.i
+
+# target to preprocess a source file
+src/cursor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/cursor.cpp.i
+.PHONY : src/cursor.cpp.i
+
+src/cursor.s: src/cursor.cpp.s
+.PHONY : src/cursor.s
+
+# target to generate assembly for a file
+src/cursor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/cursor.cpp.s
+.PHONY : src/cursor.cpp.s
+
 src/fun.o: src/fun.cpp.o
 .PHONY : src/fun.o
 
@@ -201,6 +225,30 @@ src/mod.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/mod.cpp.s
 .PHONY : src/mod.cpp.s
 
+src/prefix.o: src/prefix.cpp.o
+.PHONY : src/prefix.o
+
+# target to build an object file
+src/prefix.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/prefix.cpp.o
+.PHONY : src/prefix.cpp.o
+
+src/prefix.i: src/prefix.cpp.i
+.PHONY : src/prefix.i
+
+# target to preprocess a source file
+src/prefix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/prefix.cpp.i
+.PHONY : src/prefix.cpp.i
+
+src/prefix.s: src/prefix.cpp.s
+.PHONY : src/prefix.s
+
+# target to generate assembly for a file
+src/prefix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MiniVim.dir/build.make CMakeFiles/MiniVim.dir/src/prefix.cpp.s
+.PHONY : src/prefix.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -210,6 +258,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MiniVim"
+	@echo "... src/cursor.o"
+	@echo "... src/cursor.i"
+	@echo "... src/cursor.s"
 	@echo "... src/fun.o"
 	@echo "... src/fun.i"
 	@echo "... src/fun.s"
@@ -219,6 +270,9 @@ help:
 	@echo "... src/mod.o"
 	@echo "... src/mod.i"
 	@echo "... src/mod.s"
+	@echo "... src/prefix.o"
+	@echo "... src/prefix.i"
+	@echo "... src/prefix.s"
 .PHONY : help
 
 

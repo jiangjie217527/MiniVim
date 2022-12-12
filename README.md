@@ -1,4 +1,5 @@
-principle : 所见即所得
+**principle : 所见即所得**
+
 v1.0:\
 完成了文本编辑器的工作，理论上可以完成：\
 0.默认文件名称为a.o,支持自己新建文件\
@@ -45,3 +46,32 @@ V4.0\
 6：发现：如果把源文件分成多个模块，没改变的模块不会重复编译，提高编译效率\
 7:去除了一些很无聊的warnings\
 (新增mod.h&mod.cpp)\
+V4.1\
+1:修整在更行后的bug\
+2:光标用类\
+log:\
+重大发现：
+vector的size类型是unsigned int\
+1-0会变成很大的正数\
+worklists\
+0:show everything properly\
+1:multiple modes\
+2:move cursor in normal/insert\
+3:edit in insert(including add del '\n' at end
+& add del '\n' between )\
+4:shortcut key in normal,which may changes the context\
+5:quit save jump (**search**) find history in command\
+6:arguments when start the program\
+7:**word completion**\
+V4.2(release)\
+1：完成代码补全拿完extension\
+2：改变tab（查看了共享文档的问题）\
+3:完成代码美化\
+---
+就这样吧\
+一些(特性)说明：\
+1：单词补全的左右移动是F1&F2\
+2:默认文件名为a.o\
+3：tab默认4个空格\
+4:命令行只有esc（或者退出程序）才能退出，这意味着你可以多jmp几次\
+5:命令行模式不能左右移动光标（不然为什么不直接复制edit的代码呢\

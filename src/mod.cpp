@@ -9,12 +9,18 @@ extern int max_y, X, Y, show_y1, show_y2, op, sv, cr, de;
 extern std::vector<int> tmp[];
 extern char *nm;
 extern int changeflg;
+int jmpflg = 0;
 
+void jmp(int line, cursor &cur) {
+    jmpflg = 1;
+    cur.y = line;
+    cur.x = 0;
+}
 
 bool ComMod(WINDOW *&FileWin, WINDOW *&InfWin, WINDOW *&ComWin, WINDOW *&LNWin, cursor &cur) {
     static int st[100][100];
     static int len[100], lin = 0; //cursor x=len[lin]+1;
-    int jmpflg = 0;
+
     refreshWin(FileWin, InfWin, LNWin, cur, 3);
     werase(ComWin);
     wprintw(ComWin, ":");
@@ -50,15 +56,13 @@ bool ComMod(WINDOW *&FileWin, WINDOW *&InfWin, WINDOW *&ComWin, WINDOW *&LNWin, 
                 for (int i = 4; st[lin][i] >= '0' && st[lin][i] <= '9'; i++) {
                     l = l * 10 + st[lin][i] - 48;
                     if (l > max_y) {
-                        jmpflg = 1;
-                        cur.y = max_y;
+                        jmp(max_y, cur);
                         break;
                     }
                 }
                 l--;
                 if (l >= 0 && l <= max_y) {
-                    jmpflg = 1;
-                    cur.y = l;
+                    jmp(l, cur);
                 }
             }
             lin++;

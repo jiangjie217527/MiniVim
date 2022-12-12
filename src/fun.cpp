@@ -71,15 +71,16 @@ void move_cursor(int ch, cursor &cur) {
     if (ch == KEY_RIGHT)cur.right();
 }
 
-bool checkbutton(){
-
+bool checkbutton(cursor &cur) {
+    if (cur.y + cur.x / X > show_y2)return 1;
+    else return false;
 }
 
 void refreshWin(WINDOW *&FileWin, WINDOW *&InfWin, WINDOW *&LNWin, cursor &cur, int mode) {
     werase(FileWin);
     werase(InfWin);
     werase(LNWin);
-    if (cur.y > show_y2)showlineX(cur.y, 2);
+    if (checkbutton(cur))showlineX(cur.y, 2);
     else if (cur.y < show_y1)showlineX(cur.y, 1);
     cursor src(0, std::max(cur.x, 0), 0, 0);
     for (int i = show_y1, src_y = 0; src_y < Y && i <= show_y2; i++) {

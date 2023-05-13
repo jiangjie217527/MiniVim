@@ -41,6 +41,12 @@ int main(int argv, char *argc[]) {
             nameid = 1;   //vim a.o
         }
     } else {
+        if (argc[1][1] == 't' || argc[1][1] == 'T') {
+            op = 1;
+            changeflg = 1;
+        } else if (argc[1][1] == 'r' || argc[1][1] == 'R') {
+            op = 2;
+        }
         nameid = 2;    //vim -r a.o
     }
     nm = argc[nameid];
@@ -60,7 +66,7 @@ int main(int argv, char *argc[]) {
 
 
     std::ifstream Ti(argc[nameid]);  //  file does not exist
-    if (!Ti)cr = 1;            //create the file
+    if (!Ti)cr=changeflg=1;           //create the file
     Ti.close();
 
     std::ofstream T; //create file if not exist

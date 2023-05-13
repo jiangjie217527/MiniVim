@@ -1,3 +1,0 @@
-/home/jiangjie/MiniVim/build/CMakeFiles/MiniVim.dir
-/home/jiangjie/MiniVim/build/CMakeFiles/edit_cache.dir
-/home/jiangjie/MiniVim/build/CMakeFiles/rebuild_cache.dir

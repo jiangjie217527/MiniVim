@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/ReviveTool.dir/clear.cpp.o -o ../bin/ReviveTool  -lcurses 

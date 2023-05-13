@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 **principle : 所见即所得**
 
 v1.0:
@@ -161,3 +162,7 @@ V4.21
 1. words_alpha.txt是实现自动补全单词的文件，**重要**
 2. src/trie（包括上面的txt文件）为大作业提供的utility，非自己手写
 3. 运行环境：Ubuntu，具体编译指令及要求等见pdf
+=======
+ECHO is off.
+hello git
+>>>>>>> origin/main

@@ -160,8 +160,9 @@ V4.21
 
 文件说明：
 1. words_alpha.txt是实现自动补全单词的文件，**重要**
-2. src/trie（包括上面的txt文件）为大作业提供的utility，非自己手写
-3. 运行环境：Ubuntu，具体编译指令及要求等见pdf
+2. include/trie（包括上面的txt文件）为大作业提供的utility，非自己手写
+3. 运行环境：Ubuntu，具体编译指令及要求等见pdf，图形化工具ncurses
+4. ncurses_demo.cpp为提供的ncurses使用实例。
 =======
 ECHO is off.
 hello git
